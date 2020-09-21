@@ -30,7 +30,6 @@ class CreateContractsTable extends Migration
             $table->string('neighborhood');
             $table->string('city');
             $table->string('state');
-            $table->string('province');
             $table->timestamps();
         });
     }
