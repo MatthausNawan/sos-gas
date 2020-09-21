@@ -67,12 +67,12 @@
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/plugins/datatables/datatables.min.css')}}">
+<link rel="stylesheet" href="{{ asset('css/plugins/dataTables/datatables.min.css')}}">
 @endsection
 
 @section('js')
 <script src="{{ asset('js/plugins/dataTables/datatables.min.js') }}"></script>
-<script src="{{ asset('js/plugins/dataTables/datatables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('js/plugins/dataTables/dataTables.bootstrap4.min.js') }}"></script>
 <script>
     $('#data-tables').DataTable();
 </script>
