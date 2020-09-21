@@ -14,7 +14,7 @@ Route::get('solicitacao', 'Site\SiteController@showForm')->name('form.show');
 Route::post('solicitacao', 'Site\SiteController@saveContract')->name('contracts.save');
 
 Route::prefix('admin')
-    ->namespace('admin')
+    ->namespace('Admin')
     ->middleware('auth')
     ->group(function () {
 
