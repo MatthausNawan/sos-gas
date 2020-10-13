@@ -7,6 +7,8 @@ use App\Http\Requests\StoreUpdateContracts;
 use Illuminate\Http\Request;
 use App\Models\Condominium;
 use App\Models\Contracts;
+use PDF;
+
 
 class SiteController extends Controller
 {
@@ -23,5 +25,13 @@ class SiteController extends Controller
         $newContract = Contracts::create($request->all());
 
         return $newContract;
+    }
+
+    public function printContract()
+    {
+        $pdf = PDF::loadView('printables.contract');
+        $pdf->setPaper('a4');
+
+        return $pdf->stream();
     }
 }

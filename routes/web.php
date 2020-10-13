@@ -13,6 +13,8 @@ Route::get('/', function () {
 Route::get('solicitacao', 'Site\SiteController@showForm')->name('form.show');
 Route::post('solicitacao', 'Site\SiteController@saveContract')->name('contracts.save');
 
+Route::get('solicitacao/print/{hash?}', 'Site\SiteController@printContract');
+
 Route::prefix('admin')
     ->namespace('Admin')
     ->middleware('auth')
