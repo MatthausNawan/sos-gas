@@ -66,12 +66,12 @@ return [
         ],
     ],
     'condominium'    => [
-        'title'          => 'Condominium',
-        'title_singular' => 'Condominium',
+        'title'          => 'Condomínios',
+        'title_singular' => 'Condomínio',
         'fields'         => [
             'id'                => 'ID',
             'id_helper'         => ' ',
-            'name'              => 'Name',
+            'name'              => 'Nome',
             'name_helper'       => 'Informe o nome do Condominio',
             'is_active'         => 'Ativo',
             'is_active_helper'  => ' ',
@@ -84,12 +84,12 @@ return [
         ],
     ],
     'contract'       => [
-        'title'          => 'Contract',
-        'title_singular' => 'Contract',
+        'title'          => 'Contratos',
+        'title_singular' => 'Contrato',
         'fields'         => [
             'id'                        => 'ID',
             'id_helper'                 => ' ',
-            'condominium'               => 'Condominium',
+            'condominium'               => 'Condominio',
             'condominium_helper'        => ' ',
             'first_name'                => 'Nome',
             'first_name_helper'         => ' ',
