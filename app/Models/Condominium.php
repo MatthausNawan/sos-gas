@@ -3,17 +3,25 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Condominium extends Model
 {
-    protected $table = 'condominia';
+    use SoftDeletes;
 
-    protected $fillable = [
-        'name'
+    public $table = 'condominia';
+
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 
-    public function contracts()
-    {
-        return $this->hasMany(Contracts::class);
-    }
+    protected $fillable = [
+        'name',
+        'is_active',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
 }

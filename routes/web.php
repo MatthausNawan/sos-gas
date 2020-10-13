@@ -1,29 +1,45 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
+Route::redirect('/', '/login');
+Route::get('/home', function () {
+    if (session('status')) {
+        return redirect()->route('admin.home')->with('status', session('status'));
+    }
 
-Auth::routes(['login', 'logout']);
-
-
-Route::get('/', function () {
-    return view('site.index');
+    return redirect()->route('admin.home');
 });
 
-Route::get('solicitacao', 'Site\SiteController@showForm')->name('form.show');
-Route::post('solicitacao', 'Site\SiteController@saveContract')->name('contracts.save');
+Auth::routes(['register' => false]);
+// Admin
 
-Route::get('solicitacao/print/{hash?}', 'Site\SiteController@printContract');
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+    // Permissions
+    Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');
+    Route::resource('permissions', 'PermissionsController');
 
-Route::prefix('admin')
-    ->namespace('Admin')
-    ->middleware('auth')
-    ->group(function () {
+    // Roles
+    Route::delete('roles/destroy', 'RolesController@massDestroy')->name('roles.massDestroy');
+    Route::resource('roles', 'RolesController');
 
-        Route::get('/', 'DashboardController@index');
+    // Users
+    Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
+    Route::resource('users', 'UsersController');
 
-        Route::resources([
-            'condominius' => 'CondominiusController',
-            'contracts' => 'ContractsController'
-        ]);
-    });
+    // Condominia
+    Route::delete('condominia/destroy', 'CondominiumController@massDestroy')->name('condominia.massDestroy');
+    Route::resource('condominia', 'CondominiumController');
+
+    // Contracts
+    Route::delete('contracts/destroy', 'ContractController@massDestroy')->name('contracts.massDestroy');
+    Route::resource('contracts', 'ContractController');
+});
+Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
+// Change password
+    if (file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php'))) {
+        Route::get('password', 'ChangePasswordController@edit')->name('password.edit');
+        Route::post('password', 'ChangePasswordController@update')->name('password.update');
+        Route::post('profile', 'ChangePasswordController@updateProfile')->name('password.updateProfile');
+        Route::post('profile/destroy', 'ChangePasswordController@destroy')->name('password.destroyProfile');
+    }
+});
