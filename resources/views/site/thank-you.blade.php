@@ -22,7 +22,7 @@
 
     </div>
     <div class="login-box-body">
-        <a href="" class="btn btn-info btn-block">Download do Contrato <i class="fa fa-file-pdf-o"></i></a>
+        <a href="{{ route('contract.print',$contract_hash)}}" class="btn btn-info btn-block">Download do Contrato <i class="fa fa-file-pdf-o"></i></a>
     </div>
 
 </div>

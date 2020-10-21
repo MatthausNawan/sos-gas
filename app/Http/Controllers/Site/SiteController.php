@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Condominium;
 use App\Models\Contract;
 use PDF;
+use Illuminate\Support\Str;
 
 
 class SiteController extends Controller
@@ -21,20 +22,26 @@ class SiteController extends Controller
 
     public function saveContract(StoreUpdateContracts $request)
     {
+        $data = $request->all();
+        $data['hash'] = Str::uuid();
 
-        $newContract = Contract::create($request->all());
+        $contract = Contract::create($data);
 
-        return redirect()->route('site.thank-you');
+        return redirect()->route('site.thank-you', $contract->hash);
     }
 
-    public function thankYou()
+    public function thankYou($hash)
     {
-        return view('site.thank-you');
+        $contract = Contract::whereHash($hash)->first();
+        $contract_hash = $contract->hash;
+        return view('site.thank-you', compact('contract_hash'));
     }
 
-    public function printContract()
+    public function printContract($hash)
     {
-        $pdf = PDF::loadView('printables.contract');
+        $contract = Contract::whereHash($hash)->first();
+
+        $pdf = PDF::loadView('printables.contract', compact('contract'));
         $pdf->setPaper('a4');
 
         return $pdf->stream();

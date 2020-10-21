@@ -36,6 +36,7 @@ class Contract extends Model
         'city',
         'state',
         'address_complement',
+        'hash',
         'created_at',
         'updated_at',
         'deleted_at',

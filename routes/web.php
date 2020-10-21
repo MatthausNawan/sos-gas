@@ -8,7 +8,8 @@ Route::redirect('/', '/solicitacao-individualizacao-de-gas');
 
 Route::get('/solicitacao-individualizacao-de-gas', 'Site\SiteController@showForm');
 Route::post('/enviar-form', 'Site\SiteController@saveContract');
-Route::get('/obrigado', 'Site\SiteController@thankYou')->name('site.thank-you');
+Route::get('/obrigado/{hash}', 'Site\SiteController@thankYou')->name('site.thank-you');
+Route::get('/contracts/{hash}/print', 'Site\SiteController@printContract')->name('contract.print');
 
 Route::get('/home', function () {
     if (session('status')) {
