@@ -1,6 +1,15 @@
 <?php
 
-Route::redirect('/', '/login');
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
+
+Route::redirect('/', '/solicitacao-individualizacao-de-gas');
+
+Route::get('/solicitacao-individualizacao-de-gas', 'Site\SiteController@showForm');
+Route::post('/enviar-form', 'Site\SiteController@saveContract');
+Route::get('/obrigado', 'Site\SiteController@thankYou')->name('site.thank-you');
+
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUpdateContracts;
 use Illuminate\Http\Request;
 use App\Models\Condominium;
-use App\Models\Contracts;
+use App\Models\Contract;
 use PDF;
 
 
@@ -22,9 +22,14 @@ class SiteController extends Controller
     public function saveContract(StoreUpdateContracts $request)
     {
 
-        $newContract = Contracts::create($request->all());
+        $newContract = Contract::create($request->all());
 
-        return $newContract;
+        return redirect()->route('site.thank-you');
+    }
+
+    public function thankYou()
+    {
+        return view('site.thank-you');
     }
 
     public function printContract()

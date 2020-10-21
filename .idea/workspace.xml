@@ -25,18 +25,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="847259e2-4d50-4f45-8ec7-3b232707d065" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sos-gas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sos-gas.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/pt-br/cruds.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/pt-br/cruds.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -176,6 +172,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -193,6 +190,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602619276200</updated>
       <workItem from="1602619277418" duration="1347000" />
+      <workItem from="1602767777805" duration="1292000" />
     </task>
     <servers />
   </component>
@@ -215,5 +213,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="676" y="168" key="SettingsEditor" timestamp="1602769646919">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="676" y="168" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1602769646919" />
   </component>
 </project>

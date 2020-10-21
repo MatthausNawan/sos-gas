@@ -120,14 +120,14 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <script>
         $(function() {
-  let copyButtonTrans = '{{ trans('global.datatables.copy') }}'
-  let csvButtonTrans = '{{ trans('global.datatables.csv') }}'
-  let excelButtonTrans = '{{ trans('global.datatables.excel') }}'
-  let pdfButtonTrans = '{{ trans('global.datatables.pdf') }}'
-  let printButtonTrans = '{{ trans('global.datatables.print') }}'
-  let colvisButtonTrans = '{{ trans('global.datatables.colvis') }}'
-  let selectAllButtonTrans = '{{ trans('global.select_all') }}'
-  let selectNoneButtonTrans = '{{ trans('global.deselect_all') }}'
+  let copyButtonTrans = "{{ trans('global.datatables.copy') }}";
+  let csvButtonTrans = "{{ trans('global.datatables.csv') }}";
+  let excelButtonTrans = "{{ trans('global.datatables.excel') }}";
+  let pdfButtonTrans = "{{ trans('global.datatables.pdf') }}";
+  let printButtonTrans = "{{ trans('global.datatables.print') }}";
+  let colvisButtonTrans = "{{ trans('global.datatables.colvis') }}";
+  let selectAllButtonTrans = "{{ trans('global.select_all') }}";
+  let selectNoneButtonTrans = "{{ trans('global.deselect_all') }}";
 
   let languages = {
     'pt-br': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json'
