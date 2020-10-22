@@ -16,7 +16,8 @@
         "laravel/framework": "^6.2",
         "laravel/passport": "^7.4",
         "laravel/tinker": "^1.0",
-        "yajra/laravel-datatables-oracle": "^9.7"
+        "yajra/laravel-datatables-oracle": "^9.7",
+        "ext-gd": "*"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
