@@ -1,6 +1,18 @@
 <?php
 
-Route::redirect('/', '/login');
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
+
+Route::redirect('/', '/solicitacao-individualizacao-de-gas');
+
+Route::get('/solicitacao-individualizacao-de-gas', 'Site\SiteController@showForm');
+Route::post('/enviar-form', 'Site\SiteController@saveContract');
+Route::get('/obrigado/{hash}', 'Site\SiteController@thankYou')->name('site.thank-you');
+Route::get('/contracts/{hash}/print', 'Site\SiteController@printContract')->name('contract.print');
+
+Route::get('/send-email', 'Site\SiteController@sendEmail');
+
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
@@ -35,7 +47,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('contracts', 'ContractController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
-// Change password
+    // Change password
     if (file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php'))) {
         Route::get('password', 'ChangePasswordController@edit')->name('password.edit');
         Route::post('password', 'ChangePasswordController@update')->name('password.update');

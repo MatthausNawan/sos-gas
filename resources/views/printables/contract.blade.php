@@ -82,7 +82,7 @@
     <div class="container-fluid">
 
         <header class="text-center mb-4">
-            <img src="images/sos-logo.png" class="img-md" alt="" style="">
+            <img src="assets/sos-logo.png" class="img-md" alt="sos-logo" style="height:100px; width:auto;">
         </header>
         <div class="titulo text-center mt-100">
             <h4 class="border-bottom"><b>CADASTRO PARA LEITURA INDIVIDUALIZADA E FORNECIMENTO DE GLP E CONDIÇOES GERAIS</b></h4>
@@ -117,23 +117,23 @@
         <div class="titulo text-center mt-10">
             <h4 class="border-bottom"><b>Dados do Consumidor</b></h4>
         </div>
-        <p>Nome: <b>MATTHAUS NAWAN DE SOUZA E SILVA</b></p>
-        <p>Data de Nasc.: <b>29/07/1990</b> </p>
-        <p>Telefone: <b>83 99999898</b></p>
-        <p>Whatsapp: <b>83 99999898</b></p>
-        <p>CPF: <b>999.998.989-99</b></p>
-        <p>Identidade: <b>999.998-98</span></p>
+        <p>Nome: <b>{{$contract->first_name}}</b></p>
+        <p>Data de Nasc.: <b>{{$contract->birth_date}}</b> </p>
+        <p>Telefone: <b>{{$contract->phone}}</b></p>
+        <p>Whatsapp: <b>{{$contract->mobile_phone}}</b></p>
+        <p>CPF: <b>{{$contract->ssn}}</b></p>
+        <p>Identidade: <b>{{$contract->register}}</span></p>
 
         <div class="titulo text-center mt-10">
             <h4 class="border-bottom"><b>Localização</b></h4>
         </div>
-        <p>CEP: <b>58.303-290</b></p>
-        <p>Endereço: <b>Rua Cidade de Brieno,341</b> </p>
-        <p>Bairro: <b>Municipios 3</b></p>
-        <p>Cidade: <b>Santa Rita</b></p>
-        <p>Estado: <b>PB</b></p>
-        <p>Condominio: <b>Residencial Manain II</b></p>
-        <p>Apto/Bloco: <b>101 / 27A</span></p>
+        <p>CEP: <b>{{$contract->zipcode}}</b></p>
+        <p>Endereço: <b>{{$contract->address_1}},{{$contract->address_number}}</b> </p>
+        <p>Bairro: <b>{{$contract->province}}</b></p>
+        <p>Cidade: <b>{{$contract->city}}</b></p>
+        <p>Estado: <b>{{$contract->state}}</b></p>
+        <p>Condominio: <b>{{$contract->condominium->name}}</b></p>
+        <!-- <p>Apto/Bloco: <b>101 / 27A</span></p> -->
     </div>
 
     <footer>
@@ -212,7 +212,7 @@
             </div>
 
             <div class="assinatura mt-5 text-center">
-                <p class="border-top out"><b>Consumidor</b> - CPF: 096.234.21-94</p>
+                <p class="border-top out"><b>Consumidor</b> - CPF: {{$contract->ssn}}</p>
             </div>
 
             <div class="assinatura mt-5 text-center">
