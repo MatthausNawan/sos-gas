@@ -11,6 +11,8 @@ Route::post('/enviar-form', 'Site\SiteController@saveContract');
 Route::get('/obrigado/{hash}', 'Site\SiteController@thankYou')->name('site.thank-you');
 Route::get('/contracts/{hash}/print', 'Site\SiteController@printContract')->name('contract.print');
 
+Route::get('/send-email', 'Site\SiteController@sendEmail');
+
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));

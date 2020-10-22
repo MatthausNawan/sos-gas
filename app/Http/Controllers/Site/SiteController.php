@@ -7,6 +7,8 @@ use App\Http\Requests\StoreUpdateContracts;
 use Illuminate\Http\Request;
 use App\Models\Condominium;
 use App\Models\Contract;
+use App\Notifications\SendContractLink;
+use Illuminate\Support\Facades\Notification;
 use PDF;
 use Illuminate\Support\Str;
 
@@ -34,6 +36,9 @@ class SiteController extends Controller
     {
         $contract = Contract::whereHash($hash)->first();
         $contract_hash = $contract->hash;
+
+        $contract->notify(new SendContractLink($contract));
+
         return view('site.thank-you', compact('contract_hash'));
     }
 
