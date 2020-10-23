@@ -18,8 +18,12 @@ class StoreContractRequest extends FormRequest
     {
         return [
             'condominium_id'     => [
-                'required',
+                'nullable',
                 'integer',
+            ],
+            'condominium_name'  => [
+                'required',
+                'string'
             ],
             'first_name'         => [
                 'string',

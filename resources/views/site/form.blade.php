@@ -32,14 +32,14 @@
         <form role="form" action="{{ url('/enviar-form') }}" method="post">
             @csrf
             <div class="form-group">
-                <label>Nome</label>
+                <label>Nome Completo</label>
                 <input type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') ?? '' }}">
                 @error('first_name')
                 <span class="text-danger">{{$message}}</span>
                 @enderror
             </div>
             <div class="form-group">
-                <label>Sobrenome</label>
+                <label>Como podemos te chamar?</label>
                 <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') ?? '' }}">
                 @error('last_nam')
                 <span class="text-danger">{{$message}}</span>
@@ -87,7 +87,15 @@
                 <span class="text-danger">{{$message}}</span>
                 @enderror
             </div>
+
             <div class="form-group">
+                <label>Nome do Condominio</label>
+                <input type="text" class="form-control @error('condominium_name') is-invalid @enderror" name="condominium_name" value="{{ old('condominium_name') ?? '' }}">
+                @error('condominium_name')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+            </div>
+            {{-- <div class="form-group">
                 <label>Condomínio</label>
                 <select name="condominium_id" id="" class="form-control @error('condominium_id') is-invalid @enderror">
                     <option value="">Selecione...</option>
@@ -98,20 +106,20 @@
                 @error('condominium_id')
                 <span class="text-danger">{{$message}}</span>
                 @enderror
-            </div>
+            </div> --}}
 
             <div class="form-group col-6">
                 <label>Apto</label>
-                <input type="text" class="form-control @error('apto') is-invalid @enderror" name="apto" value="{{ old('apto') ?? '' }}">
-                @error('apto')
+                <input type="text" class="form-control @error('condominium_apto') is-invalid @enderror" name="condominium_apto" value="{{ old('condominium_apto') ?? '' }}">
+                @error('condominium_apto')
                 <span class="text-danger">{{$message}}</span>
                 @enderror
             </div>
 
             <div class="form-group col-6">
                 <label>Bloco</label>
-                <input type="text" class="form-control @error('bloco') is-invalid @enderror" name="bloco" value="{{ old('bloco') ?? '' }}">
-                @error('bloco')
+                <input type="text" class="form-control @error('condominium_block') is-invalid @enderror" name="condominium_block" value="{{ old('condominium_block') ?? '' }}">
+                @error('condominium_block')
                 <span class="text-danger">{{$message}}</span>
                 @enderror
             </div>
