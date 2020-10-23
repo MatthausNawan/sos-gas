@@ -30,7 +30,9 @@
                                         {{ trans('cruds.contract.fields.condominium') }}
                                     </th>
                                     <td>
-                                        {{ $contract->condominium->name ?? '' }}
+                                        {{ $contract->condominium_name ?? '' }} -
+                                        {{ $contract->condominium_block ?? '' }} /
+                                        {{ $contract->condominium_apto ?? '' }}
                                     </td>
                                 </tr>
                                 <tr>

@@ -19,12 +19,16 @@ class CreateContractsTable extends Migration
             $table->string('mobile_phone')->nullable();
             $table->string('email')->nullable();
             $table->string('zipcode')->nullable();
+            $table->string('condominium_name')->nullable();
+            $table->string('condominium_block')->nullable();
+            $table->string('condominium_apto')->nullable();
             $table->string('address_1')->nullable();
             $table->string('address_number')->nullable();
             $table->string('province')->nullable();
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('address_complement')->nullable();
+            $table->uuid('hash')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

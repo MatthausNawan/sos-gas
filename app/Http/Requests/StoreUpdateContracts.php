@@ -26,7 +26,8 @@ class StoreUpdateContracts extends FormRequest
         return [
             'first_name' => 'required',
             'last_name' => 'required',
-            'condominium_id' => 'required',
+            'condominium_id' => 'nullable',
+            'condominium_name' => 'required',
             'email' => 'required',
             'phone' => 'required',
             'mobile_phone' => 'required',
@@ -55,6 +56,7 @@ class StoreUpdateContracts extends FormRequest
             'first_name' => 'Nome',
             'last_name' => 'Sobrenome',
             'condominium_id' => 'Condominio',
+            'condominium_name' => 'Nome do Condominio',
             'mobile_phone' => 'Telefone Celular',
             'phone' => 'Telefone Residencial',
             'ssn    ' => 'CPF',

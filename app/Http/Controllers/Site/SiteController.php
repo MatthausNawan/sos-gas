@@ -26,6 +26,7 @@ class SiteController extends Controller
     {
         $data = $request->all();
         $data['hash'] = Str::uuid();
+        $data['condominium_id'] = null;
 
         $contract = Contract::create($data);
 
