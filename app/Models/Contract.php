@@ -22,6 +22,9 @@ class Contract extends Model
 
     protected $fillable = [
         'condominium_id',
+        'condominium_name',
+        'condominium_block',
+        'condominium_apto',
         'first_name',
         'last_name',
         'ssn',

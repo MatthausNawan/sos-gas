@@ -63,7 +63,7 @@
                                             {{ $contract->id ?? '' }}
                                         </td>
                                         <td>
-                                            {{ $contract->condominium->name ?? '' }}
+                                            {{ $contract->condominium_name ?? '' }}
                                         </td>
                                         <td>
                                             {{ $contract->first_name ?? '' }}
@@ -165,7 +165,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>

@@ -132,8 +132,8 @@
         <p>Bairro: <b>{{$contract->province}}</b></p>
         <p>Cidade: <b>{{$contract->city}}</b></p>
         <p>Estado: <b>{{$contract->state}}</b></p>
-        <p>Condominio: <b>{{$contract->condominium->name}}</b></p>
-        <!-- <p>Apto/Bloco: <b>101 / 27A</span></p> -->
+        <p>Condominio: <b>{{$contract->condominium_name}}</b></p>
+        <p>Apto/Bloco: <b>{{$contract->condominium_block}} / {{$contract->condominium_apto}}</span></p>
     </div>
 
     <footer>
