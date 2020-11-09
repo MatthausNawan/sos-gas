@@ -17,9 +17,9 @@ class SiteController extends Controller
 {
     public function showForm()
     {
-        $condominiums = Condominium::all();
+//        $condominiums = Condominium::all();
 
-        return view('site.form', compact('condominiums'));
+        return view('site.form');
     }
 
     public function saveContract(StoreUpdateContracts $request)
