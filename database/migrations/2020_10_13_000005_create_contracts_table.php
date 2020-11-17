@@ -14,7 +14,7 @@ class CreateContractsTable extends Migration
             $table->string('last_name');
             $table->string('ssn');
             $table->string('register');
-            $table->date('birth_date')->nullable();
+            $table->string('birth_date')->nullable();
             $table->string('phone')->nullable();
             $table->string('mobile_phone')->nullable();
             $table->string('email')->nullable();

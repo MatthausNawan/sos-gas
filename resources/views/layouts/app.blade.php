@@ -10,14 +10,12 @@
 
     <title>{{ trans('panel.site_title') }}</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="{{ asset('css/site.css') }}" rel="stylesheet"/>
     <link
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700&display=swap&subset=latin-ext"
         rel="stylesheet"/>
     @yield('styles')
-
 </head>
 
 <body>
@@ -36,17 +34,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Voltar ao Site</a>
             </li>
-            {{--            <li class="nav-item">--}}
-            {{--                <a class="nav-link disabled" href="#">Disabled</a>--}}
-            {{--            </li>--}}
-            {{--            <li class="nav-item dropdown">--}}
-            {{--                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>--}}
-            {{--                <div class="dropdown-menu" aria-labelledby="dropdown08">--}}
-            {{--                    <a class="dropdown-item" href="#">Action</a>--}}
-            {{--                    <a class="dropdown-item" href="#">Another action</a>--}}
-            {{--                    <a class="dropdown-item" href="#">Something else here</a>--}}
-            {{--                </div>--}}
-            {{--            </li>--}}
+            <li class="nav-item">
+                <a class="nav-link" href="{{asset('assets/downloads/MINUTA_LEITURA_INDIVIDUALIZADA_2020.pdf')}}" target="_blank">Minuta do Contrato</a>
+            </li>
         </ul>
     </div>
 </nav>
