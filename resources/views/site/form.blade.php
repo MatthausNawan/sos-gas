@@ -12,7 +12,7 @@
                 <p class="text-justify">Seja muito bem vindo, fazendo parte da nossa família SOS Gás!
                     Abaixo segue formulário para ser preenchidos com os seus dados para confecção do Contrato Fácil da
                     SOS
-                    Gás, ao final, receberá um e-mail com a sua via contratual pré-aprovada, onde ficará salvo, terá a
+                    Gás, ao final, receberá um e-mail com a sua via contratual pré-aprovada, onde ficará salvo e terá a
                     opção
                     de download imediato. Surgindo alguma dúvida, poderá nos procurar no contato, (83) 3023-0500 ou no
                     <a href="mailto:contratos@grupososgas.com.br">e-mail: contratos@grupososgas.com.br.</a>
@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div class="col-md-6 offset-md-3 col-sm-12 mb-2">
+    <div class="col-md-12 col-sm-12 mb-2">
         <div class="card">
             <div class="card-header">
                 Formulário de Pré Contrato
@@ -35,7 +35,8 @@
                 @endif
                 <form role="form" action="{{ url('/enviar-form') }}" method="post">
                     @csrf
-                    <div class="form-group">
+                    <div class="row">
+                        <div class="form-group col-md-6 col-sm-12">
                         <label>Nome Completo</label>
                         <input type="text" class="form-control @error('first_name') is-invalid @enderror"
                                name="first_name"
@@ -44,7 +45,7 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-6 col-sm-12">
                         <label>Como podemos te chamar?</label>
                         <input type="text" class="form-control @error('last_name') is-invalid @enderror"
                                name="last_name"
@@ -53,7 +54,9 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4 col-sm-12">
                         <label>CPF</label>
                         <input type="text" class="form-control @error('ssn') is-invalid @enderror" name="ssn"
                                value="{{ old('ssn') ?? '' }}">
@@ -61,7 +64,7 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-4 col-sm-12">
                         <label>RG</label>
                         <input type="text" class="form-control @error('register') is-invalid @enderror" name="register"
                                value="{{ old('register') ?? '' }}">
@@ -69,16 +72,18 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-4 col-sm-12">
                         <label>Data de Nascimento</label>
-                        <input type="text" class="form-control @error('birth_date') is-invalid @enderror"
+                        <input type="date" class="form-control @error('birth_date') is-invalid @enderror"
                                name="birth_date"
                                value="{{ old('birth_date') ?? '' }}">
                         @error('birth_date')
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3 col-sm-12">
                         <label>Telefone Residencial</label>
                         <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone"
                                value="{{ old('phone') ?? '' }}">
@@ -86,7 +91,7 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-3 col-sm-12">
                         <label>Telefone Celular</label>
                         <input type="text" class="form-control @error('mobile_phone') is-invalid @enderror"
                                name="mobile_phone" value="{{ old('mobile_phone') ?? '' }}">
@@ -94,7 +99,7 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-6 col-sm-12">
                         <label>Email</label>
                         <input type="text" class="form-control @error('email') is-invalid @enderror" name="email"
                                value="{{ old('email') ?? '' }}">
@@ -102,8 +107,10 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
+                    </div>
 
-                    <div class="form-group">
+                    <div class="row">
+                        <div class="form-group col-md-6 col-sm-12">
                         <label>Nome do Condominio</label>
                         <input type="text" class="form-control @error('condominium_name') is-invalid @enderror"
                                name="condominium_name" value="{{ old('condominium_name') ?? '' }}">
@@ -111,20 +118,9 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    {{-- <div class="form-group">
-                        <label>Condomínio</label>
-                        <select name="condominium_id" id="" class="form-control @error('condominium_id') is-invalid @enderror">
-                            <option value="">Selecione...</option>
-                            @foreach($condominiums as $cond)
-                            <option value="{{ $cond->id }}">{{$cond->name}}</option>
-                            @endforeach
-                        </select>
-                        @error('condominium_id')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
-                    </div> --}}
 
-                    <div class="form-group">
+
+                    <div class="form-group col-md-3 col-sm-12">
                         <label>Apto</label>
                         <input type="text" class="form-control @error('condominium_apto') is-invalid @enderror"
                                name="condominium_apto" value="{{ old('condominium_apto') ?? '' }}">
@@ -133,7 +129,7 @@
                         @enderror
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group col-md-3 col-sm-12">
                         <label>Bloco</label>
                         <input type="text" class="form-control @error('condominium_block') is-invalid @enderror"
                                name="condominium_block" value="{{ old('condominium_block') ?? '' }}">
@@ -141,8 +137,10 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
+                    </div>
 
-                    <div class="form-group">
+                    <div class="row">
+                        <div class="form-group col-md-2">
                         <label>Cep</label>
                         <input type="text" class="form-control @error('zipcode') is-invalid @enderror" name="zipcode"
                                id="cep" value="{{ old('zipcode') ?? '' }}">
@@ -150,7 +148,7 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-8">
                         <label>Rua</label>
                         <input type="text" class="form-control @error('address_1') is-invalid @enderror"
                                name="address_1"
@@ -159,15 +157,17 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <div class="form-group">
-                        <label>Numero</label>
+                    <div class="form-group col-md-2">
+                        <label>Número</label>
                         <input type="text" class="form-control @error('address_number') is-invalid @enderror"
                                name="address_number" value="{{ old('address_number') ?? '' }}">
                         @error('address_number')
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4 col-sm-12">
                         <label>Cidade</label>
                         <input type="text" class="form-control @error('city') is-invalid @enderror" name="city"
                                id="cidade"
@@ -176,7 +176,7 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-4 col-sm-12">
                         <label>Bairro</label>
                         <input type="text" class="form-control @error('province') is-invalid @enderror" name="province"
                                id="bairro" value="{{ old('province') ?? '' }}">
@@ -184,7 +184,7 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-4 col-sm-12">
                         <label>Estado</label>
                         <input type="text" class="form-control @error('state') is-invalid @enderror" name="state"
                                id="uf"
@@ -192,6 +192,7 @@
                         @error('state')
                         <span class="text-danger">{{$message}}</span>
                         @enderror
+                    </div>
                     </div>
                     <div>
                         <button class="btn btn-sm btn-primary" type="submit"><strong>Enviar Proposta</strong></button>
@@ -213,7 +214,6 @@
     <script>
         $('input[name=phone]').mask('(99)9999-9999')
         $('input[name=mobile_phone]').mask('(99)9.9999-9999')
-        $('input[name=birth_date]').mask('99/99/9999')
         $('input[name=ssn]').mask('999.999.999-99')
         $('input[name=zipcode]').mask('99.999-999')
     </script>
