@@ -1,13 +1,14 @@
 @extends('layouts.app')
 @section('content')
-<div class="login-box">
-    <div class="login-logo">
-        <a href="{{ route('admin.home') }}">
-            {{ trans('panel.site_title') }}
-        </a>
+<div class="col-md-6 offset-md-3">
+    <div class="card card-primary mt-5">
+    <div class="card-header">
+
+        Adiministração
+
     </div>
-    <div class="login-box-body">
-        <p class="login-box-msg">
+    <div class="card-body">
+        <p class="card-title">
             {{ trans('global.login') }}
         </p>
 
@@ -38,39 +39,17 @@
                     </p>
                 @endif
             </div>
-            <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label><input type="checkbox" name="remember"> {{ trans('global.remember_me') }}</label>
-                    </div>
-                </div>
+
                 <div class="col-xs-4">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">
                         {{ trans('global.login') }}
                     </button>
                 </div>
-            </div>
+
         </form>
-
-        @if(Route::has('password.request'))
-            <a href="{{ route('password.request') }}">
-                {{ trans('global.forgot_password') }}
-            </a><br>
-        @endif
-
-
     </div>
+</div>
 </div>
 @endsection
 
-@section('scripts')
-<script>
-    $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' /* optional */
-    });
-  });
-</script>
-@endsection
+
