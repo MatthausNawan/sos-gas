@@ -4,10 +4,17 @@
 
     <div class="row mt-5">
         <div class="col-md-4 d-flex justify-content-center">
-            <img src="{{asset('assets/sos-logo.png')}}" alt="" width="200px">
+            <img src="{{asset('assets/sos-logo-slogan.png')}}" alt="" width="200px">
         </div>
         <div class="col-md-8">
             <div class="callout callout-info">
+                <div class="row">
+
+                        <a href="{{asset('assets/downloads/MINUTA_LEITURA_INDIVIDUALIZADA_2020.pdf')}}"class="ml-auto mr-3 btn btn-dark text-white">
+                            <i class="fa fa-download"></i>
+                        Minuta do Contrato</a>
+
+                </div>
                 <h4>Bem Vindo!</h4>
                 <p class="text-justify">Seja muito bem vindo, fazendo parte da nossa família SOS Gás!
                     Abaixo segue formulário para ser preenchidos com os seus dados para confecção do Contrato Fácil da
