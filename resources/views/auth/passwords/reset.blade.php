@@ -1,15 +1,9 @@
 @extends('layouts.app')
 @section('content')
-<div class="login-box">
-    <div class="login-logo">
-        <a href="{{ route('admin.home') }}">
-            {{ trans('panel.site_title') }}
-        </a>
-    </div>
-    <div class="login-box-body">
-        <p class="login-box-msg">
-            {{ trans('global.reset_password') }}
-        </p>
+<div class="card">
+    <h1>REST</h1>
+    <div class="card-body">
+
 
         <form method="POST" action="{{ route('password.request') }}">
             @csrf

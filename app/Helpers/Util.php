@@ -2,6 +2,8 @@
 
 namespace App\Helpers;
 
+use Carbon\Carbon;
+
 class Util
 {
 
@@ -17,5 +19,13 @@ class Util
         $str = preg_replace('/[^a-z0-9]/i', '', $str);
         $str = preg_replace('/_+/', '', $str); // ideia do Bacco :)
         return $str;
+    }
+
+    public static function parseDate($date)
+    {
+        $exploded = explode('/', $date);
+
+        $date = Carbon::createFromDate($exploded[2], $exploded[1], $exploded[0]);
+        return $date;
     }
 }
