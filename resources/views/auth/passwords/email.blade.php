@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
-<div class="login-box">
+<div class="card">
     <div class="login-logo">
         <a href="{{ route('admin.home') }}">
             {{ trans('panel.site_title') }}
         </a>
     </div>
-    <div class="login-box-body">
+    <div class="card-body">
         <p class="login-box-msg">
-            {{ trans('global.reset_password') }}
+            <h1>EESTSETES</h1>
         </p>
 
         @if(session('status'))
